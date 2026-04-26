@@ -4,8 +4,10 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 const BatScroll = ({ theme }) => {
   const { scrollYProgress } = useScroll();
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
     const unsubscribe = scrollYProgress.on('change', (v) => {
       setIsVisible(v > 0.02);
     });
@@ -99,7 +101,7 @@ const BatScroll = ({ theme }) => {
             justifyContent: 'center',
             width: '36px',
             height: '36px',
-            filter: window.innerWidth < 768 
+            filter: isMobile 
               ? 'drop-shadow(0 0 4px rgba(245,197,24,0.4))' 
               : 'drop-shadow(0 0 6px rgba(245,197,24,0.6)) drop-shadow(0 0 12px rgba(245,197,24,0.3))'
           }}>
@@ -118,7 +120,7 @@ const BatScroll = ({ theme }) => {
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '32px',
-            filter: window.innerWidth < 768 
+            filter: isMobile 
               ? 'drop-shadow(0 0 4px var(--bat-gold))' 
               : 'drop-shadow(0 0 8px var(--bat-gold))'
           }}>

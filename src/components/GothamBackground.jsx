@@ -2,6 +2,11 @@ import React, { useEffect, useRef } from 'react';
 
 const GothamBackground = ({ theme = 'dark' }) => {
   const canvasRef = useRef(null);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
 
   // Animated canvas rain for smoother performance
   useEffect(() => {
@@ -121,7 +126,7 @@ const GothamBackground = ({ theme = 'dark' }) => {
       </div>
 
       {/* === FLYING ELEMENTS (Bats or HAHA) === */}
-      {Array.from({ length: window.innerWidth < 768 ? 3 : 8 }).map((_, i) => (
+      {Array.from({ length: isMobile ? 3 : 8 }).map((_, i) => (
         <div
           key={`fly-${i}`}
           className="flying-bat"
@@ -153,7 +158,7 @@ const GothamBackground = ({ theme = 'dark' }) => {
       <div className="gotham-skyline" />
 
       {/* === FOG / MIST === */}
-      {window.innerWidth > 768 && (
+      {!isMobile && (
         <>
           <div className="fog-layer fog-1" />
           <div className="fog-layer fog-2" />
@@ -161,7 +166,7 @@ const GothamBackground = ({ theme = 'dark' }) => {
       )}
 
       {/* === FLOATING EMBERS / HAHA DUST === */}
-      {Array.from({ length: window.innerWidth < 768 ? 0 : 15 }).map((_, i) => (
+      {Array.from({ length: isMobile ? 0 : 15 }).map((_, i) => (
         <div
           key={`dust-${i}`}
           className="dust-particle"

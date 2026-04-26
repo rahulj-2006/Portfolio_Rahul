@@ -6,6 +6,12 @@ import { motion, useScroll, useTransform } from 'framer-motion';
   animationType: 'rise' | 'slide-left' | 'slide-right' | 'zoom' | 'split'
 */
 const SectionReveal = ({ children, animationType = 'rise', delay = 0, id }) => {
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
   const variants = {
     rise: {
       hidden: { opacity: 0, y: 80, scale: 0.97 },
@@ -29,7 +35,7 @@ const SectionReveal = ({ children, animationType = 'rise', delay = 0, id }) => {
       },
     },
     zoom: {
-      hidden: { opacity: 0, scale: 0.8, filter: window.innerWidth < 768 ? 'none' : 'blur(10px)' },
+      hidden: { opacity: 0, scale: 0.8, filter: isMobile ? 'none' : 'blur(10px)' },
       visible: { 
         opacity: 1, scale: 1, filter: 'none',
         transition: { duration: 1, delay, ease: [0.16, 1, 0.3, 1] }
