@@ -103,10 +103,6 @@ const Contact = () => {
                 href={item.href || undefined}
                 target={item.href ? '_blank' : undefined}
                 rel={item.href ? "noopener noreferrer" : undefined}
-                onClick={item.href ? (e) => {
-                  e.preventDefault();
-                  window.open(item.href, '_blank', 'noopener,noreferrer');
-                } : undefined}
                 className="glass-panel"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +144,7 @@ const Contact = () => {
                   </div>
                   {item.href && <ArrowUpRight size={16} color="#555" />}
                 </div>
-              </Component>
+              </motion.a>
             );
           })}
         </div>
