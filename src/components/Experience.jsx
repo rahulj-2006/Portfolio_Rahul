@@ -25,7 +25,7 @@ const Experience = () => {
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: false, margin: "-100px" }}
       >
         {/* Header */}
         <div style={{ marginBottom: '3rem' }}>
@@ -47,7 +47,7 @@ const Experience = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               style={{
                 borderLeft: '3px solid',
                 borderImage: 'linear-gradient(180deg, #F5C518, #E8A500) 1',

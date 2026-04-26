@@ -76,7 +76,7 @@ const Projects = () => {
         {/* Projects Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '1.5rem',
         }}>
           {projects.map((project, index) => (
@@ -86,7 +86,7 @@ const Projects = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.08, duration: 0.6 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               style={{ 
                 display: 'flex', 
                 flexDirection: 'column',

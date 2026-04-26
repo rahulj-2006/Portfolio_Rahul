@@ -70,8 +70,8 @@ function App() {
 
           <BatDivider />
 
-          {/* Projects — dramatic split reveal */}
-          <SectionReveal animationType="split">
+          {/* Projects — simple rise for better performance */}
+          <SectionReveal animationType="rise">
             <Projects />
           </SectionReveal>
 
