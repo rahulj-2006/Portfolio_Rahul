@@ -99,7 +99,9 @@ const BatScroll = ({ theme }) => {
             justifyContent: 'center',
             width: '36px',
             height: '36px',
-            filter: 'drop-shadow(0 0 6px rgba(245,197,24,0.6)) drop-shadow(0 0 12px rgba(245,197,24,0.3))'
+            filter: window.innerWidth < 768 
+              ? 'drop-shadow(0 0 4px rgba(245,197,24,0.4))' 
+              : 'drop-shadow(0 0 6px rgba(245,197,24,0.6)) drop-shadow(0 0 12px rgba(245,197,24,0.3))'
           }}>
             <svg width="24" height="12" viewBox="0 0 200 80" fill="none" style={{ transform: 'scale(1.2)' }}>
               <path
@@ -116,7 +118,9 @@ const BatScroll = ({ theme }) => {
             alignItems: 'center',
             justifyContent: 'center',
             fontSize: '32px',
-            filter: 'drop-shadow(0 0 8px var(--bat-gold))'
+            filter: window.innerWidth < 768 
+              ? 'drop-shadow(0 0 4px var(--bat-gold))' 
+              : 'drop-shadow(0 0 8px var(--bat-gold))'
           }}>
             🃏
           </div>

@@ -121,7 +121,7 @@ const GothamBackground = ({ theme = 'dark' }) => {
       </div>
 
       {/* === FLYING ELEMENTS (Bats or HAHA) === */}
-      {Array.from({ length: 8 }).map((_, i) => (
+      {Array.from({ length: window.innerWidth < 768 ? 3 : 8 }).map((_, i) => (
         <div
           key={`fly-${i}`}
           className="flying-bat"
@@ -153,11 +153,15 @@ const GothamBackground = ({ theme = 'dark' }) => {
       <div className="gotham-skyline" />
 
       {/* === FOG / MIST === */}
-      <div className="fog-layer fog-1" />
-      <div className="fog-layer fog-2" />
+      {window.innerWidth > 768 && (
+        <>
+          <div className="fog-layer fog-1" />
+          <div className="fog-layer fog-2" />
+        </>
+      )}
 
       {/* === FLOATING EMBERS / HAHA DUST === */}
-      {Array.from({ length: 15 }).map((_, i) => (
+      {Array.from({ length: window.innerWidth < 768 ? 0 : 15 }).map((_, i) => (
         <div
           key={`dust-${i}`}
           className="dust-particle"

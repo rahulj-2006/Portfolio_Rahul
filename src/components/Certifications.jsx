@@ -210,7 +210,7 @@ const Certifications = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.06, duration: 0.5 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               style={{ padding: '1.5rem' }}
             >
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>

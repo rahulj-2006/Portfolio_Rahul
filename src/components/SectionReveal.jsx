@@ -29,9 +29,9 @@ const SectionReveal = ({ children, animationType = 'rise', delay = 0, id }) => {
       },
     },
     zoom: {
-      hidden: { opacity: 0, scale: 0.8, filter: 'blur(10px)' },
+      hidden: { opacity: 0, scale: 0.8, filter: window.innerWidth < 768 ? 'none' : 'blur(10px)' },
       visible: { 
-        opacity: 1, scale: 1, filter: 'blur(0px)',
+        opacity: 1, scale: 1, filter: 'none',
         transition: { duration: 1, delay, ease: [0.16, 1, 0.3, 1] }
       },
     },
