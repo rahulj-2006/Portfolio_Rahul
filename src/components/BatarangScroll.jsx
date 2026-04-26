@@ -19,7 +19,7 @@ const BatScroll = ({ theme }) => {
   const glowOpacity = useTransform(smoothProgress, [0, 0.3, 1], [0.6, 1, 1]);
   const progressHeight = useTransform(smoothProgress, [0, 1], ['0%', '100%']);
 
-  if (!isVisible) return null;
+  if (!isVisible || isMobile) return null;
 
   return (
     <div style={{

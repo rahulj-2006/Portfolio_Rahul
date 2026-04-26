@@ -76,8 +76,8 @@ const Projects = () => {
         {/* Projects Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '1.5rem',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          gap: '1.2rem',
         }}>
           {projects.map((project, index) => (
             <motion.div
